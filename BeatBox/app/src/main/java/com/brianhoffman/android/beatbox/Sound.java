@@ -18,7 +18,7 @@ public class Sound {
     public String getAssetPath() {
         return mAssetPath;
     }
-    
+
     public String getName() {
         return mName;
     }
