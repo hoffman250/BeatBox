@@ -1,10 +1,14 @@
 package com.brianhoffman.android.beatbox;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+import android.renderscript.BaseObj;
+
 /**
  * Created by brianhoffman on 11/12/17.
  */
 
-public class SoundViewModel {
+public class SoundViewModel extends BaseObservable {
     private Sound mSound;
     private BeatBox mBeatBox;
 
@@ -12,6 +16,7 @@ public class SoundViewModel {
         mBeatBox = beatBox;
     }
 
+    @Bindable
     public String getTitle() {
         return mSound.getName();
     }
@@ -22,5 +27,6 @@ public class SoundViewModel {
 
     public void setSound(Sound sound) {
         mSound = sound;
+        notifyChange();
     }
 }
